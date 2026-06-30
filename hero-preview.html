@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg-void: #0b0712;
+    --bg-deep: #150d22;
+    --violet: #8b5cf6;
+    --violet-soft: #a78bfa;
+    --gold: #d4af6a;
+    --gold-bright: #e9c989;
+    --whats: #22c55e;
+    --ink: #f3eef9;
+    --ink-dim: #b9aecb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(139,92,246,0.25), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 90% 10%, rgba(212,175,106,0.10), transparent 55%),
+      var(--bg-void);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6%;
+    border-bottom:1px solid rgba(212,175,106,0.12);
+  }
+  .logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:26px;font-weight:700;
+    background:linear-gradient(120deg,var(--gold-bright),var(--violet-soft));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    letter-spacing:0.5px;
+  }
+  .logo span{display:block;font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:3px;color:var(--ink-dim);font-weight:600;-webkit-text-fill-color:var(--ink-dim);}
+  .nav-links{display:flex;gap:36px;font-size:14px;color:var(--ink-dim);}
+  .nav-links a{color:inherit;text-decoration:none;}
+  .cta-top{
+    background:var(--whats);color:#06210f;font-weight:700;font-size:14px;
+    padding:11px 22px;border-radius:30px;text-decoration:none;
+    box-shadow:0 0 0 0 rgba(34,197,94,0.4);
+  }
+
+  .hero{
+    padding:90px 6% 70px;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;
+    max-width:1300px;margin:0 auto;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold-bright);font-weight:700;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--whats);box-shadow:0 0 10px var(--whats);}
+
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:54px;line-height:1.12;font-weight:600;
+    color:var(--ink);
+    margin-bottom:24px;
+  }
+  h1 em{
+    font-style:normal;
+    background:linear-gradient(120deg,var(--gold-bright),var(--violet-soft));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .sub{
+    font-size:17px;line-height:1.6;color:var(--ink-dim);max-width:480px;margin-bottom:34px;
+  }
+  .cta-row{display:flex;gap:16px;align-items:center;margin-bottom:34px;flex-wrap:wrap;}
+  .cta-main{
+    background:linear-gradient(120deg,#25d96a,var(--whats));
+    color:#06210f;font-weight:700;font-size:15.5px;
+    padding:16px 30px;border-radius:14px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:10px;
+    box-shadow:0 10px 30px -8px rgba(34,197,94,0.5);
+  }
+  .badges{display:flex;flex-wrap:wrap;gap:22px;}
+  .badge{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-dim);font-weight:600;}
+  .badge .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:24px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(212,175,106,0.18), transparent 60%),
+      linear-gradient(160deg, var(--bg-deep), #0b0712 80%);
+    border:1px solid rgba(212,175,106,0.18);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-visual .ring{
+    position:absolute;width:280px;height:280px;border-radius:50%;
+    border:1px solid rgba(139,92,246,0.35);
+  }
+  .hero-visual .ring:nth-child(2){width:200px;height:200px;border-color:rgba(212,175,106,0.3);}
+  .hero-visual .symbol{
+    font-family:'Cormorant Garamond',serif;font-size:120px;color:transparent;
+    background:linear-gradient(160deg,var(--gold-bright),var(--violet-soft));
+    -webkit-background-clip:text;background-clip:text;
+    font-weight:600;
+  }
+  .visual-caption{
+    position:absolute;bottom:24px;left:24px;right:24px;
+    font-size:12px;color:var(--ink-dim);letter-spacing:1px;text-transform:uppercase;
+    border-top:1px solid rgba(212,175,106,0.15);padding-top:14px;
+  }
+
+  @media(max-width:880px){
+    .hero{grid-template-columns:1fr;padding-top:50px;}
+    h1{font-size:38px;}
+    .nav-links{display:none;}
+    .hero-visual{aspect-ratio:16/10;order:-1;}
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="logo">Magia Celestial<span>MÃE ZORAIA · UNIÃO &amp; HARMONIA</span></div>
+    <div class="nav-links">
+      <a href="#">Início</a><a href="#">Serviços</a><a href="#">Como Funciona</a><a href="#">Depoimentos</a><a href="#">Contato</a>
+    </div>
+    <a class="cta-top" href="#">Falar no WhatsApp</a>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Mãe Zoraia está online agora</div>
+      <h1>O amor que parece perdido <em>ainda tem solução</em></h1>
+      <p class="sub">Atendimento espiritual particular para reatar, fortalecer e proteger relacionamentos — conduzido com sigilo, ética e responsabilidade.</p>
+      <div class="cta-row">
+        <a class="cta-main" href="#">💬 Falar com Mãe Zoraia agora</a>
+      </div>
+      <div class="badges">
+        <div class="badge"><span class="dot"></span>Especialista em União Amorosa</div>
+        <div class="badge"><span class="dot"></span>Sigilo Absoluto</div>
+        <div class="badge"><span class="dot"></span>Atendimento Imediato</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="symbol">♡</div>
+      <div class="visual-caption">Harmonização · Proteção · Reconciliação</div>
+    </div>
+  </section>
+
+</body>
+</html>

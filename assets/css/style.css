@@ -114,7 +114,7 @@ h1{font-family:'Cormorant Garamond',serif;font-size:50px;line-height:1.14;font-w
   background:radial-gradient(ellipse at 50% 30%, rgba(212,175,106,0.18), transparent 60%), linear-gradient(160deg, var(--bg-deep), #0b0712 80%);
   border:1px solid var(--border);
 }
-.hero-visual img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;}
 .hero-visual::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg, rgba(11,7,18,0) 50%, rgba(11,7,18,0.85) 100%);
@@ -223,7 +223,7 @@ footer a:hover{color:var(--gold-bright);}
   .hero .container{grid-template-columns:1fr;text-align:center;}
   .hero{padding:30px 0 50px;}
   h1{font-size:36px;}
-  .hero-visual{aspect-ratio:16/10;order:-1;}
+  .hero-visual{aspect-ratio:4/3;order:-1;}
   .hero p.sub{margin-left:auto;margin-right:auto;}
   .cta-row{justify-content:center;display:flex;}
   .badges{justify-content:center;}
